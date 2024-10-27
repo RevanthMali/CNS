@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diffie Helman Key Exchange</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+       
+      <script> 
+          function power(a,b,p){
+              if(b==1)
+                return a;
+              else
+                return ((Math.pow(a,b))%p);
+          }
+          var P,G,ka,kb,x,y;
+          P = parseInt(prompt("Enter a prime number:"));
+          document.write("The value of P:"+ P +"<br>");
+          G = parseInt(prompt("Enter a prime number:"));
+          document.write("The value of G:"+ G +"<br>");
+          a = parseInt(prompt("Enter the private key for (ALice):"));
+          document.write("The value of a:"+ a +"<br>");
+          x = power(G,a,P);
+          b = parseInt(prompt("Enter the private key for (Bob):"));
+          document.write("The value of b:"+ b +"<br>");
+          y = power(G,b,P);
+          ka = power(y,a,P);
+          kb = power(x,b,P);
+          document.write("seceret key from Alice"+ka+"<br>");
+          document.write("seceret key from Bob"+kb+"<br>");
+      </script>
+  </body>
+</html>
