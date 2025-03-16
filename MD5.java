@@ -1,7 +1,7 @@
 import java.util.*;
 import java.security.*;
 import java.math.BigInteger;
-// This is main class
+
 public class Main {
     public static String encryptMsg(String str) throws Exception {
         MessageDigest md = MessageDigest.getInstance("MD5");
